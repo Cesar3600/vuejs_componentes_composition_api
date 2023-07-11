@@ -1,11 +1,15 @@
 <template>
-  <h1>titulo</h1>
+  <div>
+    <ModalComponent />
+  </div>
 </template>
 
 <script>
+import ModalComponent from "./components/ModalComponent.vue";
+
 export default {
   name: "App",
-  components: {},
+  components: { ModalComponent },
 };
 </script>
 
