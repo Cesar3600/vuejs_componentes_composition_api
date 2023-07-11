@@ -1,11 +1,20 @@
-<template></template>
+<template>
+  <button @click="show = !show">MENU</button>
+  <transition name="fade">
+    <MainMenu v-show="show" />
+  </transition>
+</template>
 
 <script>
-//import HelloWorld from "./components/HelloWorld.vue";
-
+import MainMenu from "./components/MainMenu.vue";
 export default {
   name: "App",
-  components: {},
+  components: { MainMenu },
+  data() {
+    return {
+      show: false,
+    };
+  },
 };
 </script>
 
@@ -17,5 +26,15 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
 }
 </style>
