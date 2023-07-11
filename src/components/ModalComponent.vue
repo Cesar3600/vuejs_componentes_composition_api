@@ -1,30 +1,27 @@
 <template>
-  <div class="content-modal">
-    <button @click="toggle">Modal</button>
-    <teleport to="body">
-      <div v-show="show" class="modal">
-        <h1>titulo</h1>
-        <p>lorem ipsum</p>
-        <button @click="toggle">cerrar</button>
-      </div>
-    </teleport>
-  </div>
+  <div>{{ text }}</div>
 </template>
 
 <script>
 export default {
+  name: "App",
   data() {
     return {
-      show: false,
+      text: "Hola VUE",
     };
   },
-  methods: {
-    toggle() {
-      this.show = !this.show;
-    },
+  beforeCreate() {
+    console.log("beforeCreate", this.$data, this.$el);
+  },
+  created() {
+    console.log("created", this.$data, this.$el);
+  },
+  mounted() {
+    console.log("mounted", this.$data, this.$el);
   },
 };
 </script>
+
 <style>
 .content-modal {
   width: 100vw;
