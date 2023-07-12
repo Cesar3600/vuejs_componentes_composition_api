@@ -1,15 +1,18 @@
 <template>
   <div>
     <ModalComponent />
+    <div>{{ algo }}</div>
   </div>
 </template>
 
 <script>
 import ModalComponent from "./components/ModalComponent.vue";
+import base from "@/mixins/base";
 
 export default {
   name: "App",
   components: { ModalComponent },
+  mixins: [base],
 };
 </script>
 
