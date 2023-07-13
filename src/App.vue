@@ -1,18 +1,13 @@
 <template>
-  <div>
-    <ModalComponent />
-    <div>{{ algo }}</div>
-  </div>
+  <UserRepositories :user="'Diana'"></UserRepositories>
 </template>
 
 <script>
-import ModalComponent from "./components/ModalComponent.vue";
-import base from "@/mixins/base";
+import UserRepositories from "./components/UserRepositories.vue";
 
 export default {
   name: "App",
-  components: { ModalComponent },
-  mixins: [base],
+  components: { UserRepositories },
 };
 </script>
 
