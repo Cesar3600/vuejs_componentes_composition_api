@@ -10,6 +10,12 @@ export default {
     },
   },
 
+  setup(props, ctx) {
+    return {
+      repositories,
+    };
+  },
+
   data() {
     return {
       repositories: [],
