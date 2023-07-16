@@ -1,19 +1,17 @@
 <template>
-  <div>{{ encendido ? "abierto" : "cerrado" }}</div>
-  <button v-on:click="toggle">encender/ apagar</button>
+  <div>{{ MyObj.counter }}</div>
 </template>
 
 <script>
-import { ref } from "vue";
+import { reactive } from "vue";
 export default {
   setup() {
-    const encendido = ref(true);
-    const toggle = () => {
-      encendido.value = !encendido.value;
-    };
+    const MyObj = reactive({ counter: 0 });
+
+    setInterval(() => MyObj.counter++, 500);
+
     return {
-      encendido,
-      toggle,
+      MyObj,
     };
   },
 };
