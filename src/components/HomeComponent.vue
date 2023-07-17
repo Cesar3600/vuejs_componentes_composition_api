@@ -1,18 +1,21 @@
 <template>
-  <div>{{ obj }}</div>
+  <div>{{ obj.num }}</div>
 </template>
 
 <script>
-import { watch, ref } from "vue";
+import { watch, reactive } from "vue";
 export default {
   setup() {
-    const obj = ref(0);
+    const obj = reactive({ num: 0 });
 
-    setInterval(() => obj.value++, 2000);
+    setInterval(() => obj.num++, 2000);
 
-    watch(obj, (valor, anterior) => {
-      console.log(valor, anterior);
-    });
+    watch(
+      () => obj.num,
+      (valor, anterior) => {
+        console.log(valor, anterior);
+      }
+    );
 
     return {
       obj,
