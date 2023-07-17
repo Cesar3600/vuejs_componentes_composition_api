@@ -1,5 +1,5 @@
 <template>
-  <Home></Home>
+  <Home firstName="Delia" lastName="Alva"></Home>
 </template>
 <script>
 import Home from "@/components/HomeComponent.vue";
