@@ -1,24 +1,21 @@
 <template>
-  <div>{{ MyObj }}</div>
+  <div>{{ obj }}</div>
 </template>
 
 <script>
 import { watch, ref } from "vue";
 export default {
   setup() {
-    const MyObj = ref(0);
+    const obj = ref(0);
 
-    setInterval(() => MyObj.value++, 2000);
+    setInterval(() => obj.value++, 2000);
 
-    watch(
-      () => MyObj.value,
-      (valor, anterior) => {
-        console.log(valor, anterior);
-      }
-    );
+    watch(obj, (valor, anterior) => {
+      console.log(valor, anterior);
+    });
 
     return {
-      MyObj,
+      obj,
     };
   },
 };
