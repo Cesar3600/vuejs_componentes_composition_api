@@ -1,5 +1,9 @@
 <template>
-  <Home firstName="Delia" lastName="Alva"></Home>
+  <Home
+    firstName="Catherine"
+    lastName="Mikaela"
+    alias="mi amor verdadero"
+  ></Home>
 </template>
 <script>
 import Home from "@/components/HomeComponent.vue";
